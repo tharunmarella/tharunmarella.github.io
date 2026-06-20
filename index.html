@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AI systems built by Tharun Marella — Recall, Tellora, Prism." />
+  <title>Tharun Marella · builds</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #faf9f6;
+      --ink: #1a1a18;
+      --muted: #6b6b66;
+      --line: #e2e0d9;
+      --card: #fff;
+      --accent: #2563eb;
+      --pipe: #d4d2cb;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111110;
+        --ink: #ededea;
+        --muted: #9a9a94;
+        --line: #2a2a28;
+        --card: #1a1a18;
+        --accent: #60a5fa;
+        --pipe: #3a3a36;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "IBM Plex Sans", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+      min-height: 100vh;
+    }
+    .mono { font-family: "IBM Plex Mono", monospace; }
+
+    header {
+      padding: 2.5rem 1.5rem 1rem;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    header h1 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.35rem; }
+    header p { color: var(--muted); font-size: 0.9rem; }
+    .links {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.25rem;
+      font-size: 0.85rem;
+    }
+    .links a { color: var(--accent); text-decoration: none; }
+    .links a:hover { text-decoration: underline; }
+
+    main { max-width: 720px; margin: 0 auto; padding: 1rem 1.5rem 4rem; }
+
+    .intro {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    /* Project block */
+    .project { margin-bottom: 3rem; }
+    .project h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+    .project .tagline {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+
+    /* Pipeline diagram */
+    .pipeline {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 1.25rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+    }
+    .node {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 0.45rem 0.65rem;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+    .arrow {
+      color: var(--muted);
+      padding: 0 0.35rem;
+      font-size: 0.85rem;
+    }
+    @media (max-width: 500px) {
+      .pipeline { flex-direction: column; align-items: stretch; }
+      .arrow { text-align: center; padding: 0.2rem 0; transform: rotate(90deg); }
+    }
+
+    .why {
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+    }
+    .nums {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+    .num {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .num strong { color: var(--ink); font-weight: 600; }
+
+    .stack {
+      margin-top: 0.75rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .project-links {
+      margin-top: 0.75rem;
+      font-size: 0.8rem;
+    }
+    .project-links a {
+      color: var(--accent);
+      margin-right: 1rem;
+      text-decoration: none;
+    }
+    .project-links a.disabled {
+      color: var(--muted);
+      pointer-events: none;
+    }
+
+    footer {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      border-top: 1px solid var(--line);
+      font-size: 0.75rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Tharun Marella</h1>
+    <p class="mono">ships AI backends</p>
+    <div class="links">
+      <a href="mailto:tharunmarella@gmail.com">email</a>
+      <a href="https://github.com/tharunmarella" target="_blank" rel="noopener">github</a>
+      <a href="https://linkedin.com/in/tharunmarella" target="_blank" rel="noopener">linkedin</a>
+      <a href="assets/Tharun_Marella_Resume.pdf" target="_blank">resume.pdf</a>
+    </div>
+  </header>
+
+  <main>
+    <p class="intro">
+      Things I've built outside the day job. Each one is a full stack: ingestion, models, APIs, workers, deploy.
+      For employment history, see the PDF.
+    </p>
+
+    <!-- Recall -->
+    <article class="project">
+      <h2>Recall</h2>
+      <p class="tagline">Voice memory over phone calls</p>
+      <div class="pipeline">
+        <span class="node">Twilio</span>
+        <span class="arrow">→</span>
+        <span class="node">Deepgram STT</span>
+        <span class="arrow">→</span>
+        <span class="node">Gemini extract</span>
+        <span class="arrow">→</span>
+        <span class="node">ARQ workers</span>
+        <span class="arrow">→</span>
+        <span class="node">pgvector search</span>
+      </div>
+      <p class="why">
+        Calls get transcribed, structured into commitments and contact facts, and indexed for semantic recall before the next call. Webhook idempotency and billing hooks included.
+      </p>
+      <div class="nums">
+        <span class="num"><strong>dual-channel</strong> STT</span>
+        <span class="num"><strong>pre-call</strong> briefs</span>
+        <span class="num"><strong>Railway</strong> deploy</span>
+      </div>
+      <p class="stack">FastAPI · ARQ · Twilio · Deepgram · Gemini · Langfuse · Sentry</p>
+      <div class="project-links">
+        <a href="#" class="disabled">live demo (soon)</a>
+        <a href="#" class="disabled">source (soon)</a>
+      </div>
+    </article>
+
+    <!-- Tellora -->
+    <article class="project">
+      <h2>Tellora</h2>
+      <p class="tagline">Agentic CRM that proposes before it acts</p>
+      <div class="pipeline">
+        <span class="node">Gmail/Outlook</span>
+        <span class="arrow">→</span>
+        <span class="node">enrichment</span>
+        <span class="arrow">→</span>
+        <span class="node">LangGraph agent</span>
+        <span class="arrow">→</span>
+        <span class="node">approve → act</span>
+      </div>
+      <p class="why">
+        Revenue-ops backend: sync comms, score leads against ICP, and emit proposals humans approve before anything executes. Multi-tenant with Clerk and Stripe.
+      </p>
+      <div class="nums">
+        <span class="num"><strong>LangGraph</strong> agents</span>
+        <span class="num"><strong>Jina + Gemini</strong> ICP scoring</span>
+        <span class="num"><strong>multi-tenant</strong> SaaS</span>
+      </div>
+      <p class="stack">FastAPI · LangGraph · Clerk · Stripe · Next.js (thin client)</p>
+      <div class="project-links">
+        <a href="#" class="disabled">live demo (soon)</a>
+        <a href="#" class="disabled">source (soon)</a>
+      </div>
+    </article>
+
+    <!-- Prism -->
+    <article class="project">
+      <h2>Prism</h2>
+      <p class="tagline">Commerce catalog at 100K products/day</p>
+      <div class="pipeline">
+        <span class="node">crawl</span>
+        <span class="arrow">→</span>
+        <span class="node">RabbitMQ</span>
+        <span class="arrow">→</span>
+        <span class="node">Qwen-VL classify</span>
+        <span class="arrow">→</span>
+        <span class="node">dual-index search</span>
+      </div>
+      <p class="why">
+        Distributed ingestion with vision enrichment. Fine-tuned Qwen-VL (QLoRA) for category routing, served on vLLM. Three services: worker, index-enricher, API.
+      </p>
+      <div class="nums">
+        <span class="num"><strong>68% → 87%</strong> classification</span>
+        <span class="num"><strong>100K+</strong> products/day</span>
+        <span class="num"><strong>vLLM</strong> inference</span>
+      </div>
+      <p class="stack">Python · RabbitMQ · vLLM · QLoRA · PostgreSQL · TimescaleDB</p>
+      <div class="project-links">
+        <a href="#" class="disabled">live demo (soon)</a>
+        <a href="#" class="disabled">source (soon)</a>
+      </div>
+    </article>
+
+  </main>
+
+  <footer>
+    <span>Mountain View, CA</span>
+    <span class="mono">open to SWE / AI roles · Bay Area</span>
+  </footer>
+
+</body>
+</html>
